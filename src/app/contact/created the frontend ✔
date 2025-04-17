@@ -1,11 +1,4 @@
-created the frontend ✔
-.add dark mood
-.add newslatter funcanlity
-.add like utton funcnailty
-.login/Signup
-.storing cart and likes localy(when User dont login)
-now finde a way to connect this to wordprss 
-.......
+
 
 
 [{
@@ -32,5 +25,3 @@ now finde a way to connect this to wordprss
 	"modelVersionId": 3
 }]
 
-
-...........
