@@ -1,7 +1,7 @@
 'use client'
 
 import { Suspense } from 'react'
-import CartPage from '@/pages/CartPage'
+import CartPage from '@/components/pages/CartPage'
 
 export default function Cart() {
   return (

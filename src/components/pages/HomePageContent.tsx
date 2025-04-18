@@ -7,10 +7,12 @@ import { motion } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
 
 // Import components
-import ProductCard from '../components/ProductCard';
+import ProductCard from '@/components/ProductCard';
+import { Product } from '@/types/Product';
 
-// Import sample data (to be replaced with API call)
-import { featuredProducts } from '@/utils/sampleData';
+interface HomePageContentProps {
+  products: Product[];
+}
 
 const HeroSection = styled.section`
   height: 80vh;
@@ -71,8 +73,6 @@ const StyledLink = styled(Link)`
     color: var(--accent-color);
   }
 `;
-
-const MotionDiv = motion.div;
 
 const SectionTitle = styled.div`
   text-align: center;
@@ -208,7 +208,7 @@ const BannerText = styled.p`
   font-family: 'Montserrat', sans-serif;
 `;
 
-const HomePage: React.FC = () => {
+export const HomePageContent: React.FC<HomePageContentProps> = ({ products }) => {
   return (
     <>
       <HeroSection>
@@ -245,7 +245,7 @@ const HomePage: React.FC = () => {
           <h2>Featured Collection</h2>
         </SectionTitle>
         <ProductsGrid>
-          {featuredProducts.map((product) => (
+          {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </ProductsGrid>
@@ -304,6 +304,4 @@ const HomePage: React.FC = () => {
       </BannerSection>
     </>
   );
-};
-
-export default HomePage; 
+}; 

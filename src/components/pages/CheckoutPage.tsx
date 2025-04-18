@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import styled from 'styled-components';
 import { FaLock, FaCreditCard, FaPaypal } from 'react-icons/fa';
@@ -302,6 +302,12 @@ const CheckoutPage: React.FC = () => {
   const shipping = subtotal > 100 ? 0 : 10; // Free shipping on orders over $100
   const orderTotal = subtotal + taxes + shipping;
   
+  useEffect(() => {
+    if (cart.length === 0) {
+      router.push('/cart');
+    }
+  }, [cart, router]);
+  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
@@ -315,8 +321,7 @@ const CheckoutPage: React.FC = () => {
   };
   
   if (cart.length === 0) {
-    router.push('/cart');
-    return null;
+    return null; // Return null while redirecting
   }
   
   return (

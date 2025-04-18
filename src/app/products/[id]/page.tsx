@@ -1,7 +1,7 @@
 'use client'
 
 import { Suspense } from 'react'
-import ProductDetailPage from '@/pages/ProductDetailPage'
+import ProductDetailPage from '@/components/pages/ProductDetailPage'
 
 export default function ProductDetail({ params }: { params: { id: string } }) {
   return (

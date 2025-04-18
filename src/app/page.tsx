@@ -1,12 +1,11 @@
-'use client'
-
 import { Suspense } from 'react'
-import HomePage from '@/pages/HomePageFixed'
+import { HomePageContent } from '@/components/pages/HomePageContent'
+import { featuredProducts } from '@/utils/sampleData'
 
 export default function Home() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <HomePage />
+      <HomePageContent products={featuredProducts} />
     </Suspense>
   )
 } 

@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
 
 // Import components
-import ProductCard from '../components/ProductCard';
+import ProductCard from '@/components/ProductCard';
 
 // Import sample data (to be replaced with API call)
 import { featuredProducts } from '@/utils/sampleData';
